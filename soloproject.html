@@ -8,48 +8,47 @@
         </title>
         <style>
           
-            .img2{
+            .img2 {
                 width: 100px;
             }
-            .img3{
+            .img3 {
                 width:100px;
             }
-            .img4{
+            .img4 {
                 width:100px;
             }
-            .img5{
+            .img5 {
                 width:100px;
             }
-            body{
+            body {
                 max-width: 100%;
                 margin-left: 30%;
                 margin-right: 40%;
             }
-            h1{
+            h1 {
                 text-align: center;
             }
             a {
                 color: rgb(10, 70, 70);
             }
-            .newborder{
+            .newborder {
                 border: 1px rgb(103, 30, 61);
             }
-            table{
+            table {
                 border-radius: 10px;
                 border: 3px solid rgb(68, 25, 48)
-                
             }
-            p{
+            p {
                 margin-top: 10px;
             }
-            .font{
+            .font {
                 font-size: large;
                 font-weight: bold;
             }
-            .hide{
+            .hide {
                 display: none;
             }
-            td{
+            td {
                 width: 100px;
                 border: 2px solid rgb(83, 135, 83);
                 border-radius: 10px;
@@ -65,6 +64,8 @@
     </head>
     <body>
         <button onclick="changeHeading()"> Press me </button>
+        <button onclick="hideImg()">Press me</button>
+        <button onclick="hideTable()">Press me</button>
         <h1 id="heading"> Solo Website</h1>
         <ol>
             <li>1 item</li>
@@ -178,6 +179,8 @@
 
          /* exercise 28 */
 
+        
+
          /* exercise 29 */
 
          function returnOne(arr2, arr3) {
@@ -218,7 +221,14 @@
 
          /* exercise 33 */
 
-         /* exercise 34 */
+         let tr = document.getElementById("table");
+         for (let i in tr.rows) {
+            let row = tr.rows[i]
+            for (let j in row.cells) {
+                let col = row.cells[j]
+            }
+         }
+          /* exercise 34 */
          function changeHeading() {
             document.getElementById("heading").innerHTML = "My pictures are Memes";
         }
@@ -229,9 +239,23 @@
         }
         /* exercise 36 */
 
+        function addTest () {
+            let rowNode = document.getElementsByTagName("tr");
+            for( i = 0; i < rowNode.length; i++ );{
+                rowNode[i].classList.add("test");
+            }
+        }
+
         /* exercise 37 */
 
-        /* exercise 38 */
+        function addBgRed () {
+            let links = document.getElementsByTagName("a");
+            for ( let link of links){
+                link.style.backgroundColor = "red";
+
+            }
+        }
+         /* exercise 38 */
 
         window.onload = function () {
             console.log ("Page loaded");
@@ -248,6 +272,47 @@
          addItems();
 
          /* exercise 40 */
+
+         function emptyList () {
+            let list = document.getElementsByTagName("ol")[0];
+            let listItems = document.querySelectorAll("ol li");
+            for( let item of listItems ) {
+                list.removeChild(item);
+            }
+         }
+
+         /* exercise 41 */
+
+         /* exercise 42 */
+         function hideImg() {
+            let img = document.getElementsByTagName("img");
+            for ( let image of img){
+                image.classList.toggle('hide');
+            }
+         }
+
+         /* exercise 43 */
+         function hideTable() {
+            let table = document.querySelector("table");
+            table.classList.toggle("hide");
+         }
+
+         /* exercise 44 */
+
+         /* exercise 45 */
+
+         /* exercise 46 */
+
+         /* exercise 47 */
+
+         /* exercise 48 */
+
+         /* exercise 49 */
+
+         /* exercise 50 */
+
+
+
          </script>
 
 
